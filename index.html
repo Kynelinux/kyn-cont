@@ -21,12 +21,15 @@
       background-color: transparent;
     }
 
-    .contributor-list {
+    .scrolling-wrapper {
       position: absolute;
-      top: 100%;
+      width: 100%;
+      animation: scroll-up 20s linear infinite;
+    }
+
+    .contributor-list {
       width: 100%;
       text-align: center;
-      animation: scroll-up 20s linear infinite;
     }
 
     .contributor-list div {
@@ -36,34 +39,37 @@
 
     @keyframes scroll-up {
       0% {
-        top: 100%;
+        transform: translateY(0%);
       }
       100% {
-        top: -100%;
+        transform: translateY(-50%);
       }
     }
   </style>
 </head>
 <body>
   <div class="contributor-container">
-    <div class="contributor-list" id="contributorList">
-      <div>edfarage</div>
-      <div>YAKUZI</div>
-      <div>spxce</div>
-      <div>Dedicated</div>
-      <div>Joshark</div>
-      <div>Vör</div>
-      <div>Mr. Pit</div>
-      <div>Ulf</div>
-      <div>IzHaN</div>
-      <div>Faasen</div>
-      <div>Kalgoon</div>
-      <div>Defect</div>
-      <div>Egod</div>
-      <div>Trap</div>
-      <div>Tony</div>
-      <div>GregOfTheLake</div>
-      <!-- Add more names here -->
+    <div class="scrolling-wrapper">
+      <div class="contributor-list">
+        <div>Kyne Linux</div>
+        <div>Aria Stone</div>
+        <div>Jax Thorn</div>
+        <div>Mira Vale</div>
+        <div>Thorne Black</div>
+        <div>Ezra Wynn</div>
+        <div>Nova Raye</div>
+        <!-- Add more names here -->
+      </div>
+      <div class="contributor-list">
+        <div>Kyne Linux</div>
+        <div>Aria Stone</div>
+        <div>Jax Thorn</div>
+        <div>Mira Vale</div>
+        <div>Thorne Black</div>
+        <div>Ezra Wynn</div>
+        <div>Nova Raye</div>
+        <!-- Duplicate list -->
+      </div>
     </div>
   </div>
 </body>
