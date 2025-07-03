@@ -11,6 +11,7 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
       color: white;
+      height: 100%;
     }
 
     .contributor-container {
@@ -19,58 +20,73 @@
       position: relative;
       overflow: hidden;
       background-color: transparent;
-    }
-
-    .scrolling-wrapper {
-      position: absolute;
-      width: 100%;
-      animation: scroll-up 28s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .contributor-list {
-      width: 100%;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
 
     .contributor-list div {
       margin: 10px 0;
       font-size: 1.5em;
     }
-
-    @keyframes scroll-up {
-      0% {
-        transform: translateY(0%);
-      }
-      100% {
-        transform: translateY(-50%);
-      }
-    }
   </style>
 </head>
 <body>
   <div class="contributor-container">
-    <div class="scrolling-wrapper">
-      <div class="contributor-list">
-        <div>Kyne Linux</div>
-<div>edfarage</div>
-<div>YAKUZI</div>
-<div>Mira Vale</div>
-<div>spxce</div>
-<div>Dedicated</div>
-<div>Joshark</div>
-<div>Vör</div>
-<div>Tony</div>
-<div>Mr. Pit</div>
-<div>Ulf</div>
-<div>IzHaN</div>
-<div>Faasen</div>
-<div>Kalgoon</div>
-<div>Defect</div>
-<div>Egod</div>
-<div>Trap</div>
-<div>GregOfTheLake</div>
-      </div>
+    <div class="contributor-list" id="contributorList">
+      <div>Kyne Linux</div>
+        <div>Aria Stone</div>
+        <div>Jax Thorn</div>
+        <div>Mira Vale</div>
+        <div>Thorne Black</div>
+        <div>Ezra Wynn</div>
+        <div>Nova Raye</div>
+        <div>Kael Solas</div>
+        <div>Riven Voss</div>
+        <div>Nyra Quell</div>
+        <div>Bram Hollow</div>
+        <div>Silas Wren</div>
+        <div>edfarage</div>
+        <div>YAKUZI</div>
+        <div>spxce</div>
+        <div>Dedicated</div>
+        <div>Joshark</div>
+        <div>Vör</div>
+        <div>Mr. Pit</div>
+        <div>Ulf</div>
+        <div>IzHaN</div>
+        <div>Faasen</div>
+        <div>Kalgoon</div>
+        <div>Defect</div>
+        <div>Egod</div>
+        <div>Trap</div>
+        <div>Tony</div>
+        <div>GregOfTheLake</div>
     </div>
   </div>
+
+  <script>
+    const list = document.getElementById('contributorList');
+    let pos = window.innerHeight;
+    list.style.transform = 'translateY(' + pos + 'px)';
+
+    function scrollNames() {
+      pos -= 1;
+      list.style.transform = 'translateY(' + pos + 'px)';
+      if (pos + list.offsetHeight < 0) {
+        pos = window.innerHeight;
+      }
+      requestAnimationFrame(scrollNames);
+    }
+
+    requestAnimationFrame(scrollNames);
+  </script>
 </body>
 </html>
